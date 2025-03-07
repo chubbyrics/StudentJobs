@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -22,7 +19,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-=======
+
 # Node modules
 /node_modules/
 
@@ -60,4 +57,3 @@ Thumbs.db
 # Build artifacts
 /dist/
 /*.tgz
->>>>>>> 99eeeac42a0e841065286361a168b8945223f325
