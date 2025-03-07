@@ -1,0 +1,214 @@
+html, body {
+  background: #121242; /* Dark background */
+  margin: 0;
+  padding: 0;
+  width: 100vw; /* Full viewport width */
+  min-height: 100vh; /* Full height */
+  color: #f0f0f0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevents unwanted scrolling */
+}
+
+.dark-mode, .dark-mode html, .dark-mode body {
+  background: #00002a !important; /* Ensures it applies */
+  color: #e0e0e0 !important;
+}
+
+
+.dark-mode .team-card {
+  background: #0a0f5aab; /* Darker card background */
+}
+
+.dark-mode .team-card-front, .dark-mode .team-card-back {
+  background: rgba(255, 255, 255, 0.08); /* Slightly less transparency for dark mode */
+}
+
+.dark-mode .team-image {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.team-section {
+  padding: 20px; /* Balanced padding */
+}
+
+.team-section h3 {
+  margin-top: 50px; /* Reduced margin */
+  color: #d7d7d7;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.team-subtitle {
+  text-align: center;
+  font-size: 22px;
+  color: #d7d7d7;
+  margin-bottom: 15px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+/* Center last row when there's an odd number of cards */
+.team-card:last-child {
+  grid-column: span 2; /* Makes the last card take full width */
+  justify-self: center; /* Centers it */
+  width: 50%; /* Adjust width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr; /* 1 column for smaller screens */
+    max-width: 400px;
+    margin: 20px auto;
+    gap: 12px;
+  }
+
+  .team-card:last-child {
+    width: 100%; /* Full width on mobile */
+  }
+}
+
+.team-card {
+  perspective: 1000px;
+  height: 450px; /* Increased card height */
+  background: #10168dab;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 15px;
+  position: relative;
+}
+
+.team-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.team-card:hover .team-card-inner {
+  transform: rotateY(180deg);
+}
+
+.team-card-front,
+.team-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent effect */
+  backdrop-filter: blur(8px);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden; /* Ensure the back face is hidden */
+}
+
+.team-card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.team-card-back {
+  transform: rotateY(180deg);
+}
+
+.team-image {
+  width: 160px; /* Slightly bigger */
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 12px;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.team-card p {
+  font-size: 1rem;
+}
+
+.team-social {
+  display: flex;
+  gap: 15px; /* Adds space between icons */
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.team-social a {
+  width: 50px; /* Bigger icons */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px; /* Adjust icon size */
+  color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.team-social a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Adjust size for mobile */
+@media (max-width: 768px) {
+  .team-social a {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  html, body {
+    margin: 5px;
+    padding: 10px;
+    width: calc(100% - 15px);
+    min-height: calc(100vh - 15px);
+  }
+
+  .team-card {
+    height: 390px; /* Adjusted for mobile */
+    padding: 12px;
+  }
+
+  .team-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .team-card h4 {
+    font-size: 1rem;
+  }
+
+  .team-card p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,413 @@
+/* General Container */
+.jobs-container {
+  max-width: 100%;
+  height: calc(100vh - 60px); /* Ensures it doesn't overlap with the navbar */
+  margin: 60px auto 0;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  background-color: #cce4fd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+/* Sidebar for Top Companies */
+.sidebar {
+  width: 250px;
+  max-height: 300px; /* Adjusted height to make it shorter */
+  background: #fff4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Allows scrolling if content overflows */
+  margin-top: 45px;
+  margin-left: 45px;
+}
+
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.company-list {
+  list-style: none;
+  padding: 0;
+}
+
+.company-item {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+}
+
+.company-item:last-child {
+  border-bottom: none;
+}
+
+/* Job Listing */
+.jobs-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 100%;
+  margin-left: 50px;
+  
+
+}
+/* Hide scrollbar but allow scrolling */
+.jobs-content, .sidebar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.jobs-content::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+.jobs-title {
+  width: 100%;
+  text-align:justify;
+  font-size: 28px;
+  margin-bottom: 15px;
+  margin-left: 20%;
+  color: #001771;
+  font-weight: bold;
+}
+
+
+.search-filter-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  width: 50%;
+}
+
+.search-bar, .filter-dropdown {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+}
+
+.search-bar {
+  width: 50%;
+}
+
+.filter-dropdown {
+  width: 25%;
+}
+
+.jobs-list {
+  list-style: none;
+  padding: 0;
+}
+
+.job-card2 {
+  background: #fff;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 50%; /* Match search bar width */
+}
+
+
+.job-card2:hover {
+  transform: translateY(-3px);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.job-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.job-title span{
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+}
+
+
+.job-company {
+  font-size: 18px;
+  color: #666;
+  font-weight: bold;
+}
+
+.job-company span {
+  font-size: 16px;
+  color: #666;
+  font-weight: 100;
+}
+
+.job-location, .job-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* Star Rating */
+.rating {
+  display: flex;
+  font-size: 18px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.rating .star {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.rating .star:hover,
+.rating .star.filled {
+  color: #f7c200;
+}
+
+.star {
+  font-size: 24px;
+  cursor: pointer;
+  color: gray;
+}
+
+.star.selected {
+  color: gold;
+}
+
+/* Reviews Section */
+.reviews-section {
+  flex: 1;
+  max-width: 60%; /* Adjusted width */
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+  position: absolute;
+  top: 90px;
+  right: 8%;
+  margin-top: 30px;
+  height: 558px; /* Fixed height */
+  overflow-y: auto; /* Enables scrolling when content overflows */
+}
+
+/* Hide scrollbar but allow scrolling */
+.reviews-section::-webkit-scrollbar {
+  display: none;
+}
+.reviews-section {
+  scrollbar-width: none;
+}
+
+/* Review Cards */
+.review-card {
+  background: #dae7ff;
+  padding: 15px; /* Reduced padding */
+  margin-bottom: 10px;
+  border-radius: 10px; /* Smaller border radius */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* User Name */
+.review-user {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Review Text */
+.review-text {
+  font-size: 14px;
+  color: #333333;
+  margin-top: 5px;
+}
+.reviews-title {
+ font-size: 20px;
+ font-weight: bold;
+ text-align: center;
+ color: #333;
+ margin-bottom: 10px;
+}
+
+/* Name Input for Reviews */
+.review-name {
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review-company {
+  color: black;
+  font-weight: bold;
+}
+
+
+.name-input {
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #000000;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+.company-dropdown {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  color: #252525f0;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+/* Comment Box */
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 15px;
+  background: #c9d7ff;
+  padding: 15px;
+  width: 100%;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.comment-box textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #1b1b1b;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: vertical;
+  color: #101010;
+}
+
+.comment-box button {
+  align-self: flex-start;
+  width: 40px;
+  height: 40px;
+  background: url('../assets/send-icon.png') no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-box button:hover {
+  background: #0056b3;
+}
+
+.job-salary {
+  font-size: 16px;
+  color: #0003aa;
+  font-weight: bold;
+}
+
+.modal-content {
+  background-color: #bdcbff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 600px;
+  position: relative;
+  color: #333; /* Added this line to change the text color */
+}
+
+.modal-content h1 {
+  font-size: 24px;
+  color: #333; 
+}
+
+.details-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background: transparent;
+  color: #0006a9;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background 0.2s;
+  margin-right: 60%;
+}
+
+.rating-count{
+  margin-top: 8px;
+  font-size: 13px;
+  color:#666;
+}
+
+/* Apply Button */
+.apply-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background: #28a745;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.apply-btn:hover {
+  background: #218838;
+}
+
+.job-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 600px;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+
+
+

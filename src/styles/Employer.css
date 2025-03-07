@@ -1,0 +1,430 @@
+/* Job Applications title - Now Above the Container */
+.page-title {
+    text-align: center;
+    color: white;
+    padding: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 20px auto;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    max-width: 600px;
+}
+
+.dashboard-container {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.dashboard-container::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+  }
+
+.job-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.applications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.application-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.application-info {
+    flex: 1;
+    color: black;
+}
+
+.application-info h3, .application-info p {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.application-info a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.application-card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.application-card a:hover {
+    text-decoration: underline;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.accept-btn,
+.reject-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.accept-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.reject-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.accept-btn:hover {
+    background-color: #218838;
+}
+
+.reject-btn:hover {
+    background-color: #c82333;
+}
+
+.status-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.status-accepted {
+    color: green;
+}
+
+.status-rejected {
+    color: red;
+}
+
+.status-pending {
+    color: black;
+}
+
+/* Modal Container */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    z-index: 1001;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    color: red;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #0056b3;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-form label {
+    font-weight: bold;
+    text-align: left;
+    margin: 10px 0 5px;
+    color: #444;
+    width: 100%;
+    font-size: 14px;
+}
+
+.modal-form input,
+.modal-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+.modal-form input:focus,
+.modal-form textarea:focus {
+    border: 1px solid #0056b3;
+    outline: none;
+    background-color: white;
+    color: #333;
+}
+
+.modal-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+.modal-submit-btn {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.modal-submit-btn:hover {
+    background-color: #218838;
+}
+
+
+/* Interview Section Styles */
+.interview-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #f5e8e8;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+/* Adjusting the layout to center the cards */
+.interviews-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of cards */
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 20px;
+}
+
+/* Ensure cards are centered */
+.interview-card {
+    width: 30%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+    justify-content: center; /* Optional: centers content inside the card */
+    margin: 0 auto; /* Center card horizontally */
+}
+
+/* Optional: Make cards take up more space on larger screens */
+@media (min-width: 768px) {
+    .interview-card {
+        width: 30%;
+    }
+}
+
+/* For very small screens, make cards full width to improve responsiveness */
+@media (max-width: 480px) {
+    .interview-card {
+        width: 100%;
+    }
+}
+
+/* Hover effect */
+.interview-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+
+.interview-info {
+    flex: 1;
+    color: black;
+}
+
+.interview-info h3,
+.interview-info p {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.interview-info a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.interview-card a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.interview-card a:hover {
+    text-decoration: underline;
+}
+
+.interview-btn-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.accept-interview-btn,
+.reject-interview-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add space for icon + text */
+}
+
+.accept-interview-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.reject-interview-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.accept-interview-btn:hover {
+    background-color: #218838;
+}
+
+.reject-interview-btn:hover {
+    background-color: #c82333;
+}
+
+.accept-interview-btn svg,
+.reject-interview-btn svg {
+    font-size: 18px; /* Make icon size consistent */
+}
+
+.trash-bin-icon {
+    cursor: pointer;
+    font-size: 18px;
+    color: #dc3545;
+    transition: color 0.3s ease;
+}
+
+.trash-bin-icon:hover {
+    color: red;
+}
+
+/* Modal Container for Interview Management */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    z-index: 1001;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    color: red;
+}
