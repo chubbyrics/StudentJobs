@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,3 +73,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # StudentJobs
 >>>>>>> 99eeeac42a0e841065286361a168b8945223f325
+=======
+# Student Job Portal
+
+This is a React application for managing student job applications, allowing students to apply for jobs and employers to post job listings.
+
+## Features
+- Student dashboard to view and apply for jobs
+- Employer dashboard to post job listings
+- User authentication
+- Responsive design
+
+## Installation
+
+To install and run the app locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/chubbyrics/StudentJobs.git
+>>>>>>> 7d96a455028e5e84277f2b702b4dbd890c6adc8e
