@@ -132,15 +132,13 @@
     font-weight: bold;
 }
 
-/* Mascot Position */
 .mascot-container {
     position: absolute;
-    top: 30%; /* Moves mascot 10px down */
-    right: 3%; /* Keeps mascot slightly to the right */
-    width: 400px; /* Keeps mascot size */
+    top: 25%; /* Moves mascot slightly up */
+    right: 1%; /* Keeps mascot slightly to the right */
+    width: 600px; /* Increase mascot size */
     height: auto;
 }
-
 
 /* Mascot Image */
 .mascot-image {

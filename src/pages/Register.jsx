@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getAuth, createUserWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
 import { db } from "../firebaseConfig";
 import { ref, set } from "firebase/database";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom"; // Import Link
 import "../styles/Register.css";
 import mascotImage from "../assets/SJ_mascot.png";
 
@@ -103,7 +103,7 @@ const Register = ({ darkMode }) => {
               {loading ? "Registering..." : "Sign Up"}
             </button>
 
-            <p className="login-text">Already have an account? <a href="/login" className="login-link">Login here</a></p>
+            <p className="login-text">Already have an account? <Link to="/login" className="login-link">Login here</Link></p>
           </form>
         </div>
       </div>

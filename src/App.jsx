@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { db } from "./firebaseConfig";
 import { ref, get } from "firebase/database";
@@ -32,9 +32,8 @@ function App() {
         if (snapshot.exists()) {
           const role = snapshot.val().role;
           setUserRole(role);
-          localStorage.setItem("userRole", role); // Save role
+          localStorage.setItem("userRole", role);
 
-          // Prevent duplicate welcome message
           if (!sessionStorage.getItem("hasGreeted")) {
             toast.success(`Welcome back, ${snapshot.val().name || "User"}!`, {
               position: "top-center",
@@ -51,17 +50,15 @@ function App() {
       } else {
         setUserRole(null);
         localStorage.removeItem("userRole");
-        sessionStorage.removeItem("hasGreeted"); // Reset when logged out
+        sessionStorage.removeItem("hasGreeted");
       }
     });
   }, [darkMode]);
 
-  // Apply dark mode on mount
   useEffect(() => {
     document.body.classList.toggle("dark-mode", darkMode);
   }, [darkMode]);
 
-  // Toggle Dark Mode
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => {
       const newMode = !prevMode;
@@ -82,7 +79,6 @@ function App() {
     });
   };
 
-  // Logout Function with SweetAlert2
   const handleLogout = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -106,14 +102,14 @@ function App() {
             theme: darkMode ? "dark" : "light",
           });
           setUserRole(null);
-          sessionStorage.removeItem("hasGreeted"); // Reset greeting state
+          sessionStorage.removeItem("hasGreeted");
         });
       }
     });
   };
 
   return (
-    <Router basename="/studentjobs">
+    <Router>
       <Navbar userRole={userRole} darkMode={darkMode} toggleDarkMode={toggleDarkMode} onLogout={handleLogout} />
 
       <Routes>
@@ -127,7 +123,6 @@ function App() {
         <Route path="/apply/:jobId" element={<ApplyForm />} />
       </Routes>
 
-      {/* Toast Notification Container */}
       <ToastContainer />
     </Router>
   );

@@ -1,5 +1,5 @@
-html, body {
-  background: #121242; /* Dark background */
+body {
+  background: #161650; /* Dark background */
   margin: 0;
   padding: 0;
   width: 100vw; /* Full viewport width */
@@ -9,8 +9,9 @@ html, body {
   overflow-x: hidden; /* Prevents unwanted scrolling */
 }
 
-.dark-mode, .dark-mode html, .dark-mode body {
-  background: #00002a !important; /* Ensures it applies */
+
+ .dark-mode  {
+  background: #000030 !important; 
   color: #e0e0e0 !important;
 }
 
@@ -20,7 +21,7 @@ html, body {
 }
 
 .dark-mode .team-card-front, .dark-mode .team-card-back {
-  background: rgba(255, 255, 255, 0.08); /* Slightly less transparency for dark mode */
+  background: rgba(130, 130, 130, 0.107); /* Slightly less transparency for dark mode */
 }
 
 .dark-mode .team-image {
@@ -174,6 +175,14 @@ html, body {
 .team-social a:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: scale(1.1); /* Slight zoom on hover */
+}
+
+@media (max-width: 768px) {
+  .team-card:last-child {
+    grid-column: auto; /* Removes the full-width setting */
+    justify-self: center; /* Keeps it centered */
+    width: 100%; /* Full width on mobile */
+  }
 }
 
 /* Adjust size for mobile */

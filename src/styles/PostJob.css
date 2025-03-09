@@ -117,10 +117,61 @@
   background: #218838;
 }
 
-/* Responsive Design */
+/* Dark Mode - Background and Text */
+.dark-mode .container {
+  background: #0b0b3d;
+}
+
+.dark-mode .card {
+  background: rgba(0, 24, 100, 0.9);
+  color: #e0e0e0;
+}
+
+.dark-mode .title {
+  color: #f0f0f0;
+}
+
+/* Dark Mode for Form Fields */
+.dark-mode .input,
+.dark-mode .textarea {
+  background: #1c1c5a;
+  color: #f0f0f0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark-mode .textarea::placeholder,
+.dark-mode .input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Dark Mode for Right Column Boxes */
+.dark-mode .requirements, 
+.dark-mode .salary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0f0f0;
+  box-shadow: none;
+}
+
+.dark-mode .requirements h3, 
+.dark-mode .salary h3 {
+  color: #86afdf;
+}
+
+/* Dark Mode Button */
+.dark-mode .button {
+  background: #1c7430;
+}
+
+.dark-mode .button:hover {
+  background: #155724;
+}
+
+/* Improved Responsive Design */
 @media (max-width: 900px) {
   .card {
     width: 100%;
+    max-height: 90vh; /* Prevents overflowing beyond the viewport */
+    overflow-y: auto; /* Enables scrolling within the card */
   }
 
   .form-container {
@@ -134,8 +185,16 @@
     width: 100%;
   }
 
-  .input, .textarea {
+  .input, 
+  .textarea {
     width: 100%;
+    min-height: 50px; /* Ensures input fields are visible */
+  }
+
+  .textarea {
+    height: 120px; /* Slightly increased for better visibility */
+    resize: vertical; /* Allows users to resize */
+    overflow-y: auto; /* Enables scrolling within the textarea */
   }
 
   .middle-gap {
@@ -145,5 +204,16 @@
   /* Ensure button stays centered on small screens */
   .button-container {
     justify-content: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+
+  /* Prevents form elements from being cut off */
+  .container {
+    height: auto;
+    min-height: 100vh; /* Ensures it fills the screen */
+    padding-bottom: 20px; /* Avoids elements getting hidden at the bottom */
   }
 }
+

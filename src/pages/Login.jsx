@@ -3,6 +3,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { db } from "../firebaseConfig";
 import { ref, get } from "firebase/database";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/Login.css";
 import mascotImage from "../assets/SJ_mascot.png";
 
@@ -83,7 +84,9 @@ const Login = ({ setUserRole, darkMode }) => {
             <button type="submit" className="login-button">Login</button>
 
             {/* Register Link */}
-            <p className="register-text">Don't have an account? <a href="/register" className="register-link">Register here</a></p>
+            <p className="register-text">
+            Don't have an account? <Link to="/register" className="register-link">Register here</Link>
+             </p>
           </form>
         </div>
       </div>
