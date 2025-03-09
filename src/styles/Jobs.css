@@ -26,7 +26,6 @@
   margin-left: 45px;
 }
 
-
 .sidebar-title {
   font-size: 18px;
   font-weight: bold;
@@ -56,9 +55,8 @@
   overflow-y: auto;
   max-height: 100%;
   margin-left: 50px;
-  
-
 }
+
 /* Hide scrollbar but allow scrolling */
 .jobs-content, .sidebar {
   scrollbar-width: none; /* Firefox */
@@ -69,17 +67,15 @@
   display: none; /* Chrome, Safari, Opera */
 }
 
-
 .jobs-title {
   width: 100%;
-  text-align:justify;
+  text-align: justify;
   font-size: 28px;
   margin-bottom: 15px;
   margin-left: 20%;
   color: #001771;
   font-weight: bold;
 }
-
 
 .search-filter-container {
   display: flex;
@@ -119,7 +115,6 @@
   width: 50%; /* Match search bar width */
 }
 
-
 .job-card2:hover {
   transform: translateY(-3px);
 }
@@ -134,26 +129,35 @@
 .job-title {
   font-size: 16px;
   font-weight: bold;
-  color: #007bff;
+  color: #666;
 }
 
-.job-title span{
+.job-title span {
   font-size: 16px;
   font-weight: bold;
   color: #666;
 }
 
+.blue-text {
+  color: #0006a9; /* Blue color for text in {} */
+  font-weight: bold;
+}
+
+.job-title .blue-text {
+  color: #0006a9 !important; /* Force blue color */
+  font-weight: bold;
+}
 
 .job-company {
   font-size: 18px;
-  color: #666;
+  color: #222222;
   font-weight: bold;
 }
 
 .job-company span {
   font-size: 16px;
-  color: #666;
-  font-weight: 100;
+  color: #14007b;
+  font-weight: bold;
 }
 
 .job-location, .job-description {
@@ -238,11 +242,11 @@
   margin-top: 5px;
 }
 .reviews-title {
- font-size: 20px;
- font-weight: bold;
- text-align: center;
- color: #333;
- margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 /* Name Input for Reviews */
@@ -261,7 +265,6 @@
   font-weight: bold;
 }
 
-
 .name-input {
   padding: 12px;
   border: 1px solid #000000;
@@ -272,7 +275,6 @@
   margin-bottom: 15px;
 }
 
-
 .company-dropdown {
   padding: 10px;
   font-size: 14px;
@@ -282,7 +284,6 @@
   width: 100%;
   margin-bottom: 15px;
 }
-
 
 /* Comment Box */
 .comment-box {
@@ -323,7 +324,12 @@
 
 .job-salary {
   font-size: 16px;
-  color: #0003aa;
+  color: #666; /* Dark gray for salary text */
+
+}
+
+.job-salary .blue-text {
+  color: #0006a9 !important; /* Force blue color */
   font-weight: bold;
 }
 
@@ -354,10 +360,10 @@
   margin-right: 60%;
 }
 
-.rating-count{
+.rating-count {
   margin-top: 8px;
   font-size: 13px;
-  color:#666;
+  color: #666;
 }
 
 /* Apply Button */
@@ -406,8 +412,15 @@
   cursor: pointer;
 }
 
+/* Placeholder text color */
+::placeholder {
+  color: #333; /* Dark gray for placeholder text */
+  opacity: 1; /* Ensure full visibility */
+}
 
-
-
-
-
+/* Input and textarea placeholder text color */
+input::placeholder,
+textarea::placeholder {
+  color: #333; /* Dark gray for placeholder text */
+  opacity: 1; /* Ensure full visibility */
+}

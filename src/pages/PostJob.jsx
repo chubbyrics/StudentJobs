@@ -135,7 +135,9 @@ const PostJob = () => {
           </div>
 
           {/* Submit Button Below Both Columns */}
+          <div class="button-container">
           <button type="submit" className="button">Post Job</button>
+          </div>
         </form>
       </div>
     </div>

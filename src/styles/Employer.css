@@ -32,7 +32,7 @@
     text-align: center;
     font-size: 22px;
     font-weight: bold;
-    color: #222;
+    color: #e2e2e2;
     margin-bottom: 15px;
 }
 
@@ -218,7 +218,7 @@
 .modal-form textarea:focus {
     border: 1px solid #0056b3;
     outline: none;
-    background-color: white;
+    background-color: rgb(241, 241, 241);
     color: #333;
 }
 
@@ -247,7 +247,8 @@
 
 
 /* Interview Section Styles */
-.interview-title {
+
+.interview-section h3 {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -267,7 +268,7 @@
 /* Ensure cards are centered */
 .interview-card {
     width: 30%;
-    background-color: #fff;
+    background-color:  #f9f9f9;
     border: 1px solid #ddd;
     padding: 25px;
     border-radius: 12px;
@@ -277,6 +278,8 @@
     transition: transform 0.2s ease-in-out;
     justify-content: center; /* Optional: centers content inside the card */
     margin: 0 auto; /* Center card horizontally */
+    color:#333;
+
 }
 
 /* Optional: Make cards take up more space on larger screens */
@@ -341,7 +344,7 @@
     font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 10px; /* Add space for icon + text */
+    gap: 10px;
 }
 
 .accept-interview-btn {
@@ -364,7 +367,7 @@
 
 .accept-interview-btn svg,
 .reject-interview-btn svg {
-    font-size: 18px; /* Make icon size consistent */
+    font-size: 18px; 
 }
 
 .trash-bin-icon {

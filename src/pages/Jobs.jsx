@@ -203,12 +203,27 @@ const Jobs = () => {
             {filteredJobs.map((job) => (
               <li key={job.id} className="job-card2">
                 <div className="job-header">
-                  <span className="job-title"><span>Job Title:</span>{job.title}</span>
-                  <span className="job-company"><span>Company: </span>{job.company}</span>
+                   <span className="job-title">
+                    <span>Job Title:</span>
+                     <span className="blue-text">{job.title}</span> {/* Ensure this is wrapped */}
+                     </span>
+                     <span className="job-company">
+                    <span>Company: </span>
+                    <span className="blue-text">{job.company}</span> {/* Ensure this is wrapped */}
+                    </span>
                 </div>
-                <p className="job-description"><strong>Job Description:</strong>{job.description}</p>
-                <p className="job-location"><strong>Location:</strong> {job.location}</p>
-                <p className="job-salary"><strong>Salary:</strong> {job.salary ? `$${job.salary}` : "Not specified"}</p>
+                <p className="job-description">
+                  <strong>Job Description:</strong>
+                  <span className="blue-text">{job.description}</span> {/* Wrapped in .blue-text */}
+                </p>
+                <p className="job-location">
+                  <strong>Location:</strong>
+                  <span className="blue-text">{job.location}</span> {/* Wrapped in .blue-text */}
+                </p>
+                <p className="job-salary">
+                 <strong>Salary:</strong>
+                 <span className="blue-text">{job.salary ? `$${job.salary}` : "Not specified"}</span> {/* Wrapped in .blue-text */}
+                 </p>
                 <div className="rating">
                   {[...Array(5)].map((_, i) => (
                     <span
@@ -268,17 +283,16 @@ const Jobs = () => {
       </div>
 
       {modalVisible && selectedJob && (
-  <div className="job-details-modal">
-    <div className="modal-content">
-      <span className="close-modal" onClick={closeModal}>&times;</span>
-      <h1><strong>Job Requirements</strong></h1>
-      <h2>{selectedJob.title}</h2>
-      <p><strong>Company:</strong> {selectedJob.company}</p>
-      <p><strong>Company:</strong>{selectedJob.requirements}</p>
-    </div>
-  </div>
-)}
-
+        <div className="job-details-modal">
+          <div className="modal-content">
+            <span className="close-modal" onClick={closeModal}>&times;</span>
+            <h1><strong>Job Requirements</strong></h1>
+            <h2>{selectedJob.title}</h2>
+            <p><strong>Company:</strong> {selectedJob.company}</p>
+            <p><strong>Requirements:</strong>{selectedJob.requirements}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

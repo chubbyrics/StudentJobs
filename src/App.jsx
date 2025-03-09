@@ -28,15 +28,38 @@ function App() {
       if (user) {
         const userRef = ref(db, `users/${user.uid}`);
         const snapshot = await get(userRef);
+
         if (snapshot.exists()) {
-          setUserRole(snapshot.val().role);
-          toast.success(`Welcome back, ${snapshot.val().name || "User"}!`);
+          const role = snapshot.val().role;
+          setUserRole(role);
+          localStorage.setItem("userRole", role); // Save role
+
+          // Prevent duplicate welcome message
+          if (!sessionStorage.getItem("hasGreeted")) {
+            toast.success(`Welcome back, ${snapshot.val().name || "User"}!`, {
+              position: "top-center",
+              autoClose: 1000,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: darkMode ? "dark" : "light",
+            });
+            sessionStorage.setItem("hasGreeted", "true");
+          }
         }
       } else {
         setUserRole(null);
+        localStorage.removeItem("userRole");
+        sessionStorage.removeItem("hasGreeted"); // Reset when logged out
       }
     });
-  }, []);
+  }, [darkMode]);
+
+  // Apply dark mode on mount
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode", darkMode);
+  }, [darkMode]);
 
   // Toggle Dark Mode
   const toggleDarkMode = () => {
@@ -44,7 +67,17 @@ function App() {
       const newMode = !prevMode;
       localStorage.setItem("darkMode", newMode);
       document.body.classList.toggle("dark-mode", newMode);
-      toast.info(newMode ? "Dark mode enabled" : "Light mode enabled");
+
+      toast.info(newMode ? "Dark mode enabled" : "Light mode enabled", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: newMode ? "dark" : "light",
+      });
+
       return newMode;
     });
   };
@@ -63,17 +96,26 @@ function App() {
       if (result.isConfirmed) {
         const auth = getAuth();
         auth.signOut().then(() => {
-          toast.success("Logged out successfully!");
+          toast.success("Logged out successfully!", {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: darkMode ? "dark" : "light",
+          });
           setUserRole(null);
+          sessionStorage.removeItem("hasGreeted"); // Reset greeting state
         });
       }
     });
   };
 
   return (
-    <Router>
+    <Router basename="/studentjobs">
       <Navbar userRole={userRole} darkMode={darkMode} toggleDarkMode={toggleDarkMode} onLogout={handleLogout} />
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
@@ -86,7 +128,7 @@ function App() {
       </Routes>
 
       {/* Toast Notification Container */}
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
+      <ToastContainer />
     </Router>
   );
 }
