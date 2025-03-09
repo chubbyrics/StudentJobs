@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/StudentJobs/static/css/main.1a72ab69.css",
-    "main.js": "/StudentJobs/static/js/main.51dc0bb2.js",
+    "main.js": "/StudentJobs/static/js/main.16648fad.js",
     "static/js/453.47eec4c6.chunk.js": "/StudentJobs/static/js/453.47eec4c6.chunk.js",
     "static/media/homepic-removebg-preview.png": "/StudentJobs/static/media/homepic-removebg-preview.c6a7911f01022ce69923.png",
     "static/media/joanna.jpg": "/StudentJobs/static/media/joanna.e8d097bc7715c2bcf177.jpg",
@@ -20,11 +20,11 @@
     "static/media/add.png": "/StudentJobs/static/media/add.1e35f7f94c75f4e17eb7.png",
     "index.html": "/StudentJobs/index.html",
     "main.1a72ab69.css.map": "/StudentJobs/static/css/main.1a72ab69.css.map",
-    "main.51dc0bb2.js.map": "/StudentJobs/static/js/main.51dc0bb2.js.map",
+    "main.16648fad.js.map": "/StudentJobs/static/js/main.16648fad.js.map",
     "453.47eec4c6.chunk.js.map": "/StudentJobs/static/js/453.47eec4c6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1a72ab69.css",
-    "static/js/main.51dc0bb2.js"
+    "static/js/main.16648fad.js"
   ]
 }
